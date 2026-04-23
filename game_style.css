@@ -1,0 +1,276 @@
+/* Stili Generali per l'area di gioco */
+body {
+    background-color: #121212; /* Sfondo scuro quasi nero */
+    color: #e0e0e0; /* Testo grigio chiaro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Un font sans-serif pulito */
+    margin: 0;
+}
+
+.game-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Centra verticalmente rispetto alla finestra */
+    padding: 20px;
+}
+
+.challenge-container {
+    background-color: #1a1a1a; /* Sfondo del box di gioco */
+    border: 1px solid #333; /* Bordo sottile */
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1000px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    position: relative;
+    text-align: center;
+}
+
+/* Classi di utilità per mostrare/nascondere */
+.hidden {
+    display: none !important;
+}
+
+/* Stili per la Barra Superiore delle Statistiche */
+#stats-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 30px;
+}
+
+.stat-group .label {
+    color: #888;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.stat-group .value {
+    color: #00ff00; /* Verde neon per i numeri principali */
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.threats-group {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.reiniciar-btn {
+    background-color: transparent;
+    border: 1px solid #555;
+    color: #eee;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Stili per la Schermata 1: Introduzione */
+#intro-screen h1, #intro-screen h2 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.main-icon {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.score-pos { color: #00ff00; }
+.score-neg { color: #ff3333; }
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 80%;
+    margin: 30px auto;
+}
+
+.check-item {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    text-align: left;
+    color: #aaa;
+}
+
+.check-icon {
+    color: #00ff00;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#iniciar-escaneo-btn {
+    background-color: transparent;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    padding: 10px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Stili per la Schermata 2: Area di Gioco (L'immagine) */
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+#game-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #333;
+}
+
+/* Stili per i reticoli agli angoli (come nella foto) */
+.reticle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00ff00;
+}
+
+.top-left { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+.top-right { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+.bottom-left { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+.bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+/* Stili per la Schermata 3: Risultati */
+.mission-complete-text { color: #888; letter-spacing: 2px; }
+.big-score { font-size: 4rem; color: #00ff00; font-weight: bold; margin: 10px 0; }
+#rank-display { color: #eee; text-transform: uppercase; }
+
+.final-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 60%;
+    margin: 30px auto;
+}
+
+.final-stat-box {
+    background-color: #222;
+    padding: 20px;
+    border: 1px solid #333;
+}
+
+.final-stat-box .stat-value { font-size: 1.5rem; color: #eee; display: block; }
+.final-stat-box .stat-label { font-size: 0.8rem; color: #888; }
+
+#reintentar-btn {
+    background-color: #00ff00;
+    border: none;
+    color: #000;
+    padding: 10px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px 0 30px 0;
+}
+
+.score-legend-bar {
+    background-color: #222;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #333;
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+.dot { height: 10px; width: 10px; border-radius: 50%; display: inline-block; margin-right: 5px; margin-left: 10px; }
+.green-dot { background-color: #00ff00; }
+.red-dot { background-color: #ff3333; }
+.white-dot { background-color: #fff; }
+
+/*SCANER */
+.scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Copre tutta la larghezza */
+    height: 3px; /* Spessore della linea */
+    background: #00ff00; /* Verde brillante */
+    box-shadow: 0 0 15px #00ff00; /* Effetto luce laser */
+    z-index: 10;
+    pointer-events: none; /* Permette di cliccare l'immagine sotto */
+    
+    /* Animazione: dall'alto verso il basso in 3 secondi */
+    animation: scan-vertical 3s infinite linear;
+}
+
+@keyframes scan-vertical {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+.header-text h1 {
+    background: linear-gradient(90deg, #ffffff, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.light {
+    color: #ffffff;
+}
+
+.accent {
+    color: #3b82f6;
+    text-shadow: 0 0 15px rgba(59,130,246,0.7);
+}
+/* TITOLO PRINCIPALE */
+.header-text h1 {
+    font-size: 90px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* SECURITY TITLE */
+.security-title {
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #3b82f6;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* LINEE LATERALI */
+.security-title::before,
+.security-title::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background: #3b82f6;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+/* PARAGRAFO */
+.description {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+}
+
+/* COLORI */
+.light {
+    color: white;
+}
+
+.accent {
+    color: #3b82f6;
+    text-shadow: 0 0 15px rgba(59,130,246,0.7);
+}

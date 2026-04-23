@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argus Tactical</title>
+    
+    <style>
+        /* --- RESET BASE E FONT --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Altezza minima 100% della finestra */
+            background-color: #050505; /* Nero profondo tattico */
+            font-family: 'Montserrat', 'Arial', sans-serif; /* Font più moderno */
+            color: white;
+            overflow-x: hidden; /* Evita lo scroll orizzontale */
+        }
+
+        /* --- IMMAGINE DI SFONDO FISSA E UNIFORME --- */
+        /* Questo pseudo-elemento garantisce che lo sfondo rimanga fisso, 
+           ben visibile e non si oscuri quando si scorre la pagina. */
+        body::before {
+            content: "";
+            position: fixed; /* Mantiene lo sfondo fisso */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* --- MODIFICA NOME FOTO CORRETTO --- */
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), /* Overlay scuro per leggibilità */
+                url("Foto/fondo.png"); /* --- USA IL NOME CORRETTO --- */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1; /* Mette lo sfondo sotto tutto il contenuto */
+            will-change: transform; /* Ottimizzazione prestazioni */
+        }
+
+        /* --- HERO WRAPPER (PRIMA SCHERMATA) --- */
+        .hero-wrapper {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* --- PARTICLE EFFECT --- */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* --- MENU DI NAVIGAZIONE --- */
+        .navbar {
+            position: relative;
+            z-index: 100; /* Sopra le particelle */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 60px;
+            background-color: rgba(0,0,0,0.7); /* Sfondo menu scuro */
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px); /* Effetto sfocatura sfondo */
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li a.active-link {
+            color: white;
+        }
+
+        /* SELETTORE DI LINGUA */
+        .lang-selector {
+            display: flex;
+            gap: 8px;
+            margin-left: 15px;
+            border-left: 1px solid rgba(255,255,255,0.2);
+            padding-left: 15px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0;
+            transition: color 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            color: white;
+        }
+
+        .lang-btn.active {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* --- HERO CONTENT (TESTO CENTRALE) --- */
+        .content {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .content h1 {
+            font-size: 6rem;
+            font-weight: 800;
+            letter-spacing: 10px;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 0 0 50px 0;
+            font-weight: 500;
+        }
+
+        /* PULSANTI */
+        .buttons {
+            display: flex;
+            gap: 25px;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #25d366; /* Verde tattico/WhatsApp */
+            border-color: #25d366;
+            color: black;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp {
+            border-color: #25d366;
+            color: #25d366;
+        }
+
+        .btn-whatsapp:hover {
+            background: #25d366;
+            color: white;
+        }
+
+        /* --- SEZIONE ABOUT (MISSION/VISION) --- */
+        .section-about {
+            position: relative;
+            z-index: 10; /* Sopra lo sfondo */
+            padding: 120px 20px;
+            background-color: rgba(10,10,10,0.9); /* Sfondo scuro semi-trasparente */
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 80px;
+            line-height: 1.1;
+        }
+
+        /* GRIGLIA CARDS */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+        }
+
+        .about-card {
+            background-color: rgba(20,20,20,0.5);
+            padding: 50px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(37, 211, 102, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            color: white;
+            border-bottom: 2px solid #25d366;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .card-text {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* SEZIONE ESPERIENZA FULL WIDTH */
+        .experience-card {
+            margin-top: 50px;
+            grid-column: 1 / -1; /* Occupa tutte le colonne della griglia */
+            text-align: center;
+        }
+
+        .experience-card .card-text {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- SCROLLBAR PERSONALIZZATA --- */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 6px;
+            border: 3px solid #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #25d366; /* Verde al passaggio del mouse */
+        }
+
+        /* --- SMOOTH SCROLL --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 1024px) {
+            .content h1 { font-size: 4rem; }
+            .navbar { padding: 20px 30px; }
+            .nav-links { gap: 15px; }
+            .nav-links li a { font-size: 11px; }
+        }
+
+        @media (max-width: 768px) {
+            .content h1 { font-size: 3rem; letter-spacing: 5px; }
+            .content p { font-size: 1rem; letter-spacing: 2px; }
+            .buttons { flex-direction: column; gap: 15px; }
+            .section-title { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-card { padding: 30px; }
+        }
+/*SEZIONE SERVIZIOS*/
+ /* --- STILI SPECIFICI PER SEZIONE SERVIZI --- */
+        .section-servicios {
+            position: relative;
+            z-index: 10;
+            padding: 100px 20px;
+            background-color: #0c0d0e; /* Grigio scuro tattico */
+            border-top: 1px solid rgba(255,255,255,0.03);
+            text-align: center;
+        }
+
+        .section-header-servicios {
+            margin-bottom: 70px;
+        }
+
+        .subtitle-servicios {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 600;
+        }
+
+        .title-servicios {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 15px 0 25px 0;
+            color: white;
+            line-height: 1.1;
+        }
+
+        .description-servicios {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* GRIGLIA SCHEDE SERVIZI */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* STILE SINGOLA SCHEDA (CARD) */
+        .servicio-card {
+            background-color: #141618; /* Grigio scuro card */
+            padding: 50px 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra orizzontalmente i figli */
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(37, 211, 102, 0.2); /* Leggero bordo verde tattico */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        /* CERCHIO ICONA */
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255,255,255,0.05); /* Sfondo semi-trasparente */
+            border-radius: 50%; /* Rende circolare */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .servicio-card:hover .icon-circle {
+            background-color: rgba(37, 211, 102, 0.1); /* Sfondo verde al passaggio */
+            border-color: rgba(37, 211, 102, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* ICONA (SVG) */
+        .icon-circle svg {
+            width: 30px;
+            height: 30px;
+            color: white; /* Colore icona bianca */
+            transition: color 0.3s ease;
+        }
+
+        .servicio-card:hover .icon-circle svg {
+            color: #25d366; /* Verde al passaggio */
+        }
+
+        /* TITOLO CARDS SERVIZI */
+        .card-title-serv {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        /* TESTO CARDS SERVIZI */
+        .card-text-serv {
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+            font-size: 1rem;
+            margin: 0;
+            /* Allineamento a sinistra del testo all'interno della card centata */
+            text-align: left; 
+            width: 100%;
+        }
+
+        /* --- STILE PULSANTE SOLICITAR SERVICIO (Verde Tattico) --- */
+.solicitar-btn {
+    display: flex; /* Centra testo e freccia */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: auto; /* Lo spinge in fondo alla card */
+    background-color: transparent;
+    border: 1px solid #28a745;
+    color: #28a745;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Effetto hover (al passaggio del mouse) */
+.solicitar-btn:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2);
+}
+
+/* Stile per la freccia all'interno del pulsante */
+.solicitar-btn .arrow {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+/* Animazione freccia all'hover */
+.solicitar-btn:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* --- STILE CHECKLIST --- */
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+    width: 100%;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.checklist li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.checklist .check {
+    color: #28a745; /* Segno di spunta verde */
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+
+/* GRIGLIA SCHEDE SERVIZI - MODIFICATA PER 4 COLONNE ALLINEATE */
+.servicios-grid {
+    display: grid;
+    /* Forza la griglia a creare esattamente 4 colonne di larghezza uguale (1fr ciascuna) */
+    grid-template-columns: repeat(4, 1fr); 
+    
+    gap: 30px; /* Ridotto leggermente il gap per far entrare meglio 4 colonne su schermi medi */
+    max-width: 1400px; /* Aumentata la larghezza massima per contenere 4 colonne */
+    margin: 0 auto;
+    padding: 0 20px; /* Aggiunto un po' di padding laterale */
+}
+
+/* RESPONSIVE PER SERVIZI (Per schermi più piccoli, riorganizziamo) */
+@media (max-width: 1200px) {
+    .servicios-grid {
+        /* Su schermi medi, passiamo a 2 colonne per riga */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .servicios-grid {
+        /* Su schermi piccoli (mobile), passiamo a 1 colonna per riga */
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    .servicio-card {
+        padding: 40px 20px; /* Riduciamo il padding interno su mobile */
+    }
+}
+body {
+  
+  background-size: cover; /* riempie tutta la pagina */
+  background-position: center; /* centra l'immagine */
+  background-repeat: no-repeat; /* non ripete */
+
+  margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Il gradiente serve a scurire leggermente l'immagine per leggere meglio i testi */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('foto/fondo.png');
+    
+    
+    background-attachment: fixed; /* L'immagine resta ferma durante lo scroll (effetto moderno) */
+    
+}
+
+
+
+
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="hero-wrapper">
+        <div id="particles-js"></div>
+
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <img src="foto/logo.png" alt="Argus Tactical Logo">
+                <span>Argus Tactical</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#inicio" data-i18n="nav_inicio" class="active-link">Inicio</a></li>
+                <li><a href="#servicios" data-i18n="nav_servicios">Servicios</a></li>
+                <li><a href="#about" data-i18n="nav_nosotros">Nosotros</a></li>
+                <li><a href="desafio.html" data-i18n="nav_desafio">Desafío</a></li>
+                <li><a href="#contacto" data-i18n="nav_contacto">Contacto</a></li>
+
+                
+                <li class="lang-selector">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <span style="color: rgba(255,255,255,0.3)">|</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="content" id="inicio">
+            <h1 data-i18n="hero_title">Argus Tactical</h1>
+            <p data-i18n="hero_subtitle">Protección · Estrategia · Precisión</p>
+            
+            <div class="buttons">
+                <a href="#contacto" class="btn" data-i18n="btn_evaluacion">Solicita Evaluación</a>
+                <a href="https://wa.me/573471234567" class="btn btn-whatsapp" target="_blank" data-i18n="btn_whatsapp">
+                    WhatsApp Directo
+                </a>
+            </div>
+        </div>
+    </div> <section id="about" class="section-about">
+        <div class="container">
+            
+            <h2 class="section-title" data-i18n="about_title">¿Quiénes Somos?</h2>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3 class="card-title" data-i18n="mission_title">Misión</h3>
+                    <p class="card-text" data-i18n="mission_text">
+                        Brindar servicios integrales de seguridad privada VIP con altos estándares de profesionalismo, confidencialidad y eficiencia, orientados a la protección de personas, bienes e instalaciones.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <h3 class="card-title" data-i18n="vision_title">Visión</h3>
+                    <p class="card-text" data-i18n="vision_text">
+                        Para el año 2030, ARGUS Tactical será reconocida como una empresa líder en servicios de seguridad privada VIP, destacándose por su excelencia operativa y compromiso permanente.
+                    </p>
+                </div>
+
+                <div class="about-card experience-card">
+                    <h3 class="card-title" data-i18n="experience_title">Experiencia</h3>
+                    <p class="card-text" data-i18n="experience_text">
+                        Ofrecemos soluzioni confiabili adattate alle necessità di ogni cliente, complementate con servizi di supporto come portineria, giardinaggio, pulizia e manutenzione varia.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+<!---SERVIZIO PARTE DE SOTTTO-->
+      <section id="servicios" class="section-servicios">
+        <div class="container">
+           <div class="servicios-grid">
+            
+            <div class="servicio-card">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <h3 class="card-title-serv">Seguridad Personal</h3>
+                <p class="card-text-serv">Escoltas armados certificados, convoy de seguridad y protección VIP 24/7 para máxima seguridad personal.</p>
+                <a href="https://wa.me/573471234567" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
+            </div>
+
+            <div class="servicio-card">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+                <h3 class="card-title-serv">Investigación Privada</h3>
+                <p class="card-text-serv">Seguimiento profesional, inteligencia de campo e informes documentados con total confidencialidad.</p>
+                <a href="https://wa.me/573471234567" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
+            </div>
+
+            <div class="servicio-card">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line></svg>
+                </div>
+                <h3 class="card-title-serv">Operaciones Especiales</h3>
+                <p class="card-text-serv">Rutas interdepartamentales, transporte táctico blindado y operaciones di alto riesgo.</p>
+                <a href="https://wa.me/573471234567" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
+            </div>
+
+            <div class="servicio-card">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+                </div>
+                <h3 class="card-title-serv">Seguridad Ejecutiva</h3>
+                <p class="card-text-serv">Evaluación de riesgos, planificación estratégica y logística privada integral.</p>
+                <a href="https://wa.me/573471234567" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
+            </div>
+
+        </div> ```
+
+           
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Configurazione Particelle (Bianche, collegate)
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.4, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.3, "width": 1 },
+                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" }, /* Crea collegamento al passaggio del mouse */
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": {
+                    "grab": { "distance": 200, "line_linked": { "opacity": 0.8 } },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+
+    <script>
+        // Oggetto contenente tutte le traduzioni
+        const translations = {
+            es: {
+                nav_inicio: "Inicio",
+                nav_servicios: "Servicios",
+                nav_nosotros: "Nosotros",
+                nav_desafio: "Desafío",
+                nav_contacto: "Contacto",
+                hero_title: "Argus Tactical",
+                hero_subtitle: "Protección · Estrategia · Precisión",
+                btn_evaluacion: "Solicita Evaluación",
+                btn_whatsapp: "WhatsApp Directo",
+                about_title: "¿Quiénes Somos?",
+                mission_title: "Misión",
+                mission_text: "Brindar servicios integrales de seguridad privada VIP con altos estándares de profesionalismo, confidencialidad y eficiencia, orientados a la protección de personas, bienes e instalaciones.",
+                vision_title: "Visión",
+                vision_text: "Para el año 2030, ARGUS Tactical será reconocida como una empresa líder en servicios de seguridad privada VIP, destacándose por su excelencia operativa y compromiso permanente.",
+                experience_title: "Experiencia",
+                experience_text: "Ofrecemos soluzioni confiabili adattate alle necessità di ogni cliente, complementate con servizi di supporto come portineria, giardinaggio, pulizia e manutenzione varia.",
+                 challenge_title: "Simulador Táctico",
+                challenge_sub: "Táctico",
+                challenge_label: "Security Awareness Challenge",
+                challenge_desc: "Pon a prueba tus habilidades de observación táctica. Identifica las amenazas de seguridad ocultas en las escenas antes de que se agote el tiempo.",
+                 back_home: "← Volver al inicio"
+            },
+            en: {
+                nav_inicio: "Home",
+                nav_servicios: "Services",
+                nav_nosotros: "About Us",
+                nav_desafio: "Challenge",
+                nav_contacto: "Contact",
+                hero_title: "Argus Tactical",
+                hero_subtitle: "Protection · Strategy · Precision",
+                btn_evaluacion: "Request Evaluation",
+                btn_whatsapp: "Direct WhatsApp",
+                about_title: "Who We Are?",
+                mission_title: "Mission",
+                mission_text: "To provide comprehensive VIP private security services with high standards of professionalism, confidentiality, and efficiency, oriented towards the protection of people, assets, and facilities.",
+                vision_title: "Vision",
+                vision_text: "By the year 2030, ARGUS Tactical will be recognized as a leading company in VIP private security services, standing out for its operational excellence and permanent commitment.",
+                experience_title: "Experience",
+                experience_text: "We offer reliable solutions tailored to each client's needs, complemented by support services such as concierge, gardening, cleaning, and various maintenance tasks.",
+                 challenge_title: "Tactical Simulator",
+        challenge_sub: "Tactical",
+        challenge_label: "Security Awareness Challenge",
+        challenge_desc: "Test your tactical observation skills. Identify hidden security threats in the scenes before time runs out.",
+        back_home: "← Back Home"
+                
+                
+            }
+             
+        };
+
+        // Funzione per cambiare la lingua
+        function setLanguage(lang) {
+            // Salva la lingua scelta nel LocalStorage (opzionale, per ricordare la scelta)
+            localStorage.setItem('argus_lang', lang);
+
+            // Seleziona tutti gli elementi con l'attributo data-i18n
+            const elements = document.querySelectorAll('[data-i18n]');
+            
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    // Sostituisce il testo dell'elemento con la traduzione
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Aggiorna lo stato visivo dei pulsanti lingua
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Cambia l'attributo lang dell'HTML (buono per SEO e accessibilità)
+            document.documentElement.lang = lang;
+        }
+
+        // --- INIZIALIZZAZIONE ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Controlla se c'è una lingua salvata, altrimenti usa lo spagnolo
+            const savedLang = localStorage.getItem('argus_lang') || 'es';
+            setLanguage(savedLang);
+
+            // Aggiunge l'evento click ai pulsanti lingua
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+
+            // Gestione Active Link nel Menu durante lo scroll
+            const sections = document.querySelectorAll('section, .hero-wrapper');
+            const navLinks = document.querySelectorAll('.nav-links li a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    // Calcola quale sezione è attualmente visibile
+                    if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active-link');
+                    }
+                });
+            });
+        });
+
+
+
+
+        
+
+    </script>
+</body>
+</html>
+

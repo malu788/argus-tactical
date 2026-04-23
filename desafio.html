@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío - Argus Tactical</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="game_style.css">
+</head>
+<body>
+
+    <main class="game-wrapper">
+        <section class="challenge-container">
+            
+            <div id="stats-panel" class="hidden">
+                <div class="stat-group">
+                    <span class="label">TIEMPO</span>
+                    <span id="timer-display" class="value">30</span><span class="unit">s</span>
+                </div>
+                <div class="stat-group score-group">
+                    <span class="label">PUNTAJE</span>
+                    <span id="score-display" class="value">0</span>
+                </div>
+                <div class="stat-group threats-group">
+                    <span id="threats-found">0</span>/5 Amenazas
+                </div>
+                <button id="reiniciar-btn-top" onclick="resetGame()" class="reiniciar-btn">REINICIAR</button>
+            </div>
+<!--TITULO-->
+            <div class="challenge-header">
+    <div class="header-text">
+        <h1>
+    <span class="light">SIMULADOR</span>
+    <span class="accent">TÁCTICO</span>
+</h1>
+
+<h2 class="security-title" data-i18n="challenge_label">
+    SECURITY AWARENESS CHALLENGE
+</h2>
+
+<p class="description" data-i18n="challenge_desc">
+    Pon a prueba tus habilidades de observación táctica. 
+    Identifica las amenazas de seguridad ocultas en las escenas 
+    antes de que se agote el tiempo.
+</p>
+    </div>
+
+    <div class="header-action">
+        <a href="index.html" class="btn-home" data-i18n="back_home">← Torna Home</a>
+    </div>
+</div>
+<!--FINISCE TITULO-->
+            <div id="intro-screen" class="screen-content">
+                <img src="foto/logo.png" alt="Escudo de Seguridad" class="main-icon">
+                <h1 data-i18n="game_title">PRUEBA DE OBSERVACIÓN</h1>
+                <p class="main-instruction" data-i18n="game_instrution">Identifica 5 amenazas de seguridad ocultas en la escena.</p>
+                <p class="scoring-instruction">
+                    <span class="score-pos" data-i18n="score_positive">+10 puntos</span> por cada hallazgo correcto, 
+                    <span class="score-neg">-2 puntos</span> por clic incorrecto.
+                </p>
+                
+                <div class="checkbox-grid">
+                    <div class="check-item"><span class="check-icon">✓</span> Objetos abandonados</div>
+                    <div class="check-item"><span class="check-icon">✓</span> Violaciones de acceso</div>
+                    <div class="check-item"><span class="check-icon">✓</span> Equipos dañados</div>
+                    <div class="check-item"><span class="check-icon">✓</span> Actividad sospechosa</div>
+                </div>
+
+                <button id="iniciar-escaneo-btn" onclick="startGame()">INICIAR ESCANEO</button>
+            </div>
+
+            <div id="game-screen" class="screen-content hidden">
+                <div class="image-container">
+                    <img src="foto/fondo.png" id="game-image">
+                    <div class="scanner-line"></div> </div>
+                    
+                    <div class="reticle top-left"></div>
+                    <div class="reticle top-right"></div>
+                    <div class="reticle bottom-left"></div>
+                    <div class="reticle bottom-right"></div>
+                </div>
+            </div>
+
+            <div id="results-screen" class="screen-content hidden">
+                <p class="mission-complete-text">MISIÓN COMPLETADA</p>
+                <h2>TU PUNTUACIÓN</h2>
+                <div id="final-score" class="big-score">0</div>
+                <h3 id="rank-display">NOVATO</h3>
+                
+                <p class="feedback-text">Sigue entrenando para mejorar tus habilidades.</p>
+                
+                <div class="final-stats-grid">
+                    <div class="final-stat-box">
+                        <span id="final-found" class="stat-value">0</span>
+                        <span class="stat-label">ENCONTRADAS</span>
+                    </div>
+                    <div class="final-stat-box">
+                        <span id="final-errors" class="stat-value">0</span>
+                        <span class="stat-label">ERRORES</span>
+                    </div>
+                    <div class="final-stat-box">
+                        <span id="final-time" class="stat-value">30s</span>
+                        <span class="stat-label">TIEMPO</span>
+                    </div>
+                </div>
+
+                <button id="reintentar-btn" onclick="resetGame()">REINTENTAR MISIÓN</button>
+                
+                <div class="score-legend-bar">
+                    <span class="dot green-dot"></span> Amenaza Neutralizada (+10)
+                    <span class="dot red-dot"></span> Falsa Alarma (-2)
+                    <span class="dot white-dot"></span> Clic en las amenazas
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="game_logic.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
