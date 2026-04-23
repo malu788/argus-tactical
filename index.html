@@ -29,7 +29,7 @@
             /* --- MODIFICA NOME FOTO CORRETTO --- */
             background-image: 
                 linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), /* Overlay scuro per leggibilità */
-                url("Foto/fondo.png"); /* --- USA IL NOME CORRETTO --- */
+                url("fondo.png"); /* --- USA IL NOME CORRETTO --- */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -255,16 +255,34 @@
         }
 
         .card-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-            color: white;
-            border-bottom: 2px solid #25d366;
-            padding-bottom: 10px;
-            display: inline-block;
+             font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    color: #ffffff;
+
+    /* Effetto glow elegante */
+    text-shadow: 0 0 10px rgba(255,255,255,0.2);
+
+    position: relative;
+    display: inline-block;
         }
+        .card-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 80px;
+    height: 3px;
+
+    background: linear-gradient(90deg, #25d366, transparent);
+    border-radius: 5px;
+}
+.about-card:hover .card-title {
+    color: #25d366;
+    text-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+}
 
         .card-text {
             color: rgba(255,255,255,0.7);
@@ -567,7 +585,7 @@ body {
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-    <title>Seguridad Privada en Colombia | Argus Tactical</title>
+<title>Seguridad Privada en Colombia | Argus Tactical</title>
 
 <meta name="description" content="Servicios de seguridad privada VIP en Colombia. Protección personal, análisis de riesgos y soluciones tácticas en Cali, Medellín y Bogotá.">
 
@@ -606,8 +624,8 @@ body {
             <p data-i18n="hero_subtitle">Protección · Estrategia · Precisión</p>
             
             <div class="buttons">
-                <a href="#contacto" class="btn" data-i18n="btn_evaluacion">Solicita Evaluación</a>
-                <a href="https://wa.me/573471234567" class="btn btn-whatsapp" target="_blank" data-i18n="btn_whatsapp">
+                <a href="contacto" class="btn" data-i18n="btn_evaluacion">Solicita Evaluación.html</a>
+                <a href="https://wa.me/573207971333" class="btn btn-whatsapp" target="_blank" data-i18n="btn_whatsapp">
                     WhatsApp Directo
                 </a>
             </div>
@@ -633,9 +651,9 @@ body {
                 </div>
 
                 <div class="about-card experience-card">
-                    <h3 class="card-title" data-i18n="experience_title">Experiencia</h3>
+                    <h3 class="card-title" data-i18n="experience_title">SERVICIOS DE ÈLITE</h3>
                     <p class="card-text" data-i18n="experience_text">
-                        Ofrecemos soluzioni confiabili adattate alle necessità di ogni cliente, complementate con servizi di supporto come portineria, giardinaggio, pulizia e manutenzione varia.
+                        Ofrecemos soluciones integrales de seguridad adaptadas a las necesidades específicas de cada cliente.
                     </p>
                 </div>
             </div>
@@ -653,7 +671,7 @@ body {
                 </div>
                 <h3 class="card-title-serv">Seguridad Personal</h3>
                 <p class="card-text-serv">Escoltas armados certificados, convoy de seguridad y protección VIP 24/7 para máxima seguridad personal.</p>
-                <a href="https://wa.me/573471234567" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
+                <a href="https://wa.me/573207971333" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
             </div>
 
             <div class="servicio-card">
@@ -662,7 +680,7 @@ body {
                 </div>
                 <h3 class="card-title-serv">Investigación Privada</h3>
                 <p class="card-text-serv">Seguimiento profesional, inteligencia de campo e informes documentados con total confidencialidad.</p>
-                <a href="https://wa.me/573471234567" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
+                <a href="https://wa.me/573207971333" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
             </div>
 
             <div class="servicio-card">
@@ -671,7 +689,7 @@ body {
                 </div>
                 <h3 class="card-title-serv">Operaciones Especiales</h3>
                 <p class="card-text-serv">Rutas interdepartamentales, transporte táctico blindado y operaciones di alto riesgo.</p>
-                <a href="https://wa.me/573471234567" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
+                <a href="https://wa.me/573207971333" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
             </div>
 
             <div class="servicio-card">
@@ -680,7 +698,7 @@ body {
                 </div>
                 <h3 class="card-title-serv">Seguridad Ejecutiva</h3>
                 <p class="card-text-serv">Evaluación de riesgos, planificación estratégica y logística privada integral.</p>
-                <a href="https://wa.me/573471234567" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
+                <a href="https://wa.me/573207971333" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
             </div>
 
         </div> ```
@@ -733,8 +751,8 @@ body {
                 mission_text: "Brindar servicios integrales de seguridad privada VIP con altos estándares de profesionalismo, confidencialidad y eficiencia, orientados a la protección de personas, bienes e instalaciones.",
                 vision_title: "Visión",
                 vision_text: "Para el año 2030, ARGUS Tactical será reconocida como una empresa líder en servicios de seguridad privada VIP, destacándose por su excelencia operativa y compromiso permanente.",
-                experience_title: "Experiencia",
-                experience_text: "Ofrecemos soluzioni confiabili adattate alle necessità di ogni cliente, complementate con servizi di supporto come portineria, giardinaggio, pulizia e manutenzione varia.",
+                experience_title: "Servicios de Èlite",
+                servicios_elicte_text: "Ofrecemos soluciones integrales de seguridad adaptadas a las necesidades específicas de cada cliente.",
                  challenge_title: "Simulador Táctico",
                 challenge_sub: "Táctico",
                 challenge_label: "Security Awareness Challenge",
@@ -756,9 +774,9 @@ body {
                 mission_text: "To provide comprehensive VIP private security services with high standards of professionalism, confidentiality, and efficiency, oriented towards the protection of people, assets, and facilities.",
                 vision_title: "Vision",
                 vision_text: "By the year 2030, ARGUS Tactical will be recognized as a leading company in VIP private security services, standing out for its operational excellence and permanent commitment.",
-                experience_title: "Experience",
-                experience_text: "We offer reliable solutions tailored to each client's needs, complemented by support services such as concierge, gardening, cleaning, and various maintenance tasks.",
-                 challenge_title: "Tactical Simulator",
+                experience_title: "Servicios  Èlite",
+                servicios_elite_text: "We offer comprehensive security solutions tailored to the specific needs of each client.",
+                challenge_title: "Tactical Simulator",
         challenge_sub: "Tactical",
         challenge_label: "Security Awareness Challenge",
         challenge_desc: "Test your tactical observation skills. Identify hidden security threats in the scenes before time runs out.",
@@ -844,3 +862,8 @@ body {
 </body>
 </html>
 
+
+            
+   
+             
+        
