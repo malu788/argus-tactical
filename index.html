@@ -9,22 +9,21 @@
 <meta name="keywords" content="seguridad privada Colombia, seguridad VIP Cali, protección personal, seguridad empresarial">
 
 <meta name="author" content="Argus Tactical">
-    <meta property="og:title" content="Argus Tactical Seguridad VIP en Colombia">
+   <meta property="og:title" content="Argus Tactical Seguridad VIP en Colombia">
 <meta property="og:description" content="Protección ejecutiva, escoltas VIP y seguridad privada en Colombia">
 <meta property="og:image" content="https://malu788.github.io/argus-tactical/logo.png">
 <meta property="og:url" content="https://malu788.github.io/argus-tactical/">
 <meta property="og:type" content="website"> 
 <meta name="robots" content="index, follow">
     <link rel="icon" href="logo.png">
-    
-    
+
     <style>
         /* --- RESET BASE E FONT --- */
         body, html {
             margin: 0;
             padding: 0;
             min-height: 100vh; /* Altezza minima 100% della finestra */
-            background-color: #050505; /* Nero profondo tattico */
+            background-color: rgb(82, 79, 231); /* Nero profondo tattico */
             font-family: 'Montserrat', 'Arial', sans-serif; /* Font più moderno */
             color: white;
             overflow-x: hidden; /* Evita lo scroll orizzontale */
@@ -79,8 +78,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 25px 60px;
-            background-color: rgba(0,0,0,0.7); /* Sfondo menu scuro */
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            background-color: rgba(111, 111, 112, 0); /* Sfondo menu scuro */
+            border-bottom: 1px solid rgba(253, 245, 198, 0.911);
             backdrop-filter: blur(5px); /* Effetto sfocatura sfondo */
         }
 
@@ -224,12 +223,18 @@
 
         /* --- SEZIONE ABOUT (MISSION/VISION) --- */
         .section-about {
-            position: relative;
-            z-index: 10; /* Sopra lo sfondo */
-            padding: 120px 20px;
-            background-color: rgba(10,10,10,0.9); /* Sfondo scuro semi-trasparente */
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
+    /* ... (resto del codice di sopra) ... */
+    box-shadow: inset 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.about-card {
+    background-color: rgba(255, 255, 255, 0.05); /* Grigio quasi trasparente */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+
+
 
         .container {
             max-width: 1200px;
@@ -317,10 +322,42 @@
             margin: 0 auto;
         }
 
-        /* --- SCROLLBAR PERSONALIZZATA --- */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
+        /* --- SCROLLBAR PERSONALIZZATA GRANDE --- */
+::-webkit-scrollbar {
+    width: 20px; /* Molto più larga per essere cliccata facilmente */
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a; /* Sfondo nero della traccia */
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #25d366; /* Il tuo verde vivo */
+    border-radius: 12px;
+    /* Aumentando il bordo, la barra sembra più "staccata" e pulita */
+    border: 4px solid #0a0a0a; 
+    
+    /* Forza la barra a essere lunga almeno 180 pixel */
+    min-height: 180px; 
+    
+    /* Aggiunge un leggero effetto ombra interna per farla sembrare 3D */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2efd7c; /* Diventa ancora più luminosa al passaggio del mouse */
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #199e4b; /* Si scurisce leggermente quando la clicchi */
+}
+
+
+        
+
+
+
 
         ::-webkit-scrollbar-track {
             background: #0a0a0a;
@@ -579,18 +616,423 @@ body {
   background-size: cover; /* riempie tutta la pagina */
   background-position: center; /* centra l'immagine */
   background-repeat: no-repeat; /* non ripete */
-
+/*FONDO IMAGGINNE*/
   margin: 0;
     padding: 0;
     min-height: 100vh;
     /* Il gradiente serve a scurire leggermente l'immagine per leggere meglio i testi */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('fondo.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                url('fondo.jpg');
     
     
     background-attachment: fixed; /* L'immagine resta ferma durante lo scroll (effetto moderno) */
     
 }
+/*NUVO CODICE */
+experience-card {
+    text-align: center;
+    padding: 60px;
+    background: rgba(226, 18, 18, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(233, 13, 13, 0.05);
+
+   
+}
+
+/* TITOLO GRANDE */
+.experience-card .card-title {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    display: inline-block;
+}
+
+/* LINEA VERDE */
+.experience-card .card-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, #25d366, transparent);
+}
+
+/* TESTO */
+.experience-card .card-text {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+/* EFFETTO HOVER */
+.experience-card:hover .card-title {
+    color: #25d366;
+    text-shadow: 0 0 20px rgba(37, 211, 102, 0.7);
+
+    
+}
+/*SEGUIRDAD PERSONAL*/
+
+.servicio {
+  text-align: center;
+  padding: 40px;
+}
+
+.servicio h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.servicio p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.servicio video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+.solicitar-btn {
+  position: relative;
+  z-index: 999;
+}
+
+
+.titulo {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.texto {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.videos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.video-box {
+  width: 300px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-box video { /*RIDUCE ALTEZZA VIDEO*/
+  width: 300%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn {
+  display: block;
+  width: fit-content;
+  margin: 30px auto;
+  padding: 12px 25px;
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.servicio-card {
+    padding: 10PX 15px;
+  
+  margin: 15px auto; /* 👈 centra */
+}
+/*SECUNDA IMAMAGENE INVESTIGACION*/
+.video-box video {
+    max-width: 100%; /* Si adatta alla larghezza del box */
+    border-radius: 15px; /* Per mantenere i bordi arrotondati che vedo in foto */
+}
+
+/* Contenitore principale che occupa tutta la riga */
+.servizio-unico-orizzontale {
+    width: 100%;
+    padding: 50px 20px;
+    text-align: center; /* Centra titolo, paragrafo e bottone */
+    background-color: #1a1a1a; /* Colore scuro come il tuo sito */
+}
+
+.titulo-centrado {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.texto-centrado {
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto 30px auto; /* Centra il paragrafo e dà spazio sotto */
+}
+
+/* Questa parte mette i 3 video in orizzontale */
+.contenitore-video-orizzontale {
+    display: flex;
+    justify-content: center; /* Centra i video */
+    gap: 20px; /* Spazio tra i video */
+    margin-bottom: 40px;
+    flex-wrap: nowrap; /* Impedisce che vadano a capo */
+}
+
+.contenitore-video-orizzontale .video-box {
+    flex: 1; /* Fa sì che i video abbiano la stessa larghezza */
+    max-width: 300px; /* Limita la grandezza massima dei video */
+}
+
+.video-box video {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* Stile del bottone */
+.btn-solicitar {
+    display: inline-block;
+    border: 2px solid #32CD32;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+
+/* BLOCCO 2*/
+/* Layout per Investigazione */
+.investigacion-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 80px auto; /* Spazio dal blocco sopra */
+    padding: 40px;
+    background: rgba(20, 20, 20, 0.6);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left; /* Testo a sinistra */
+}
+
+.investigacion-content {
+    flex: 1;
+}
+
+.investigacion-video {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo-bello {
+    font-size: 2.8rem;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-left: 5px solid #25d366; /* Linea verde a lato del titolo */
+    padding-left: 15px;
+}
+
+.texto-investigacion {
+    font-size: 1.2rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Checklist stilizzata */
+.checklist-investigacion {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 35px;
+}
+
+.checklist-investigacion li {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.checklist-investigacion .check {
+    color: #25d366;
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+/* Video singolo */
+.video-box-single {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-box-single video {
+    width: 100%;
+    display: block;
+}
+
+.boton-container-left {
+    margin-top: 20px;
+}
+
+/* Responsive per cellulari: mette il video sotto il testo */
+@media (max-width: 768px) {
+    .investigacion-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .titulo-bello {
+        border-left: none;
+        padding-left: 0;
+    }
+    .checklist-investigacion li {
+        justify-content: center;
+    }
+}
+
+/*CONTAINER3*/
+/* Layout per Operazioni Speciali */
+.operaciones-container {
+    display: flex;
+    flex-direction: row; /* Video a sinistra, testo a destra */
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 80px auto; 
+    padding: 40px;
+    background: rgba(30, 10, 10, 0.4); /* Un tocco di rosso scuro nello sfondo */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 0, 0, 0.1); /* Bordo leggermente rosso */
+    text-align: left;
+}
+
+.operaciones-content {
+    flex: 1;
+}
+
+.operaciones-video {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Titolo con linea rossa per differenziarlo */
+.titulo-bello-alt {
+    font-size: 2.8rem;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-left: 5px solid #ff0000; /* Linea rossa tattica */
+    padding-left: 15px;
+}
+
+/* Responsive: su mobile rimette il video sopra e il testo sotto */
+@media (max-width: 768px) {
+    .operaciones-container {
+        flex-direction: column-reverse; /* Video sopra, testo sotto su mobile */
+        text-align: center;
+    }
+    .titulo-bello-alt {
+        border-left: none;
+        padding-left: 0;
+    }
+}
+/*CONTAINER4*/
+/* Container con colore vivo e sfumatura */
+.ejecutiva-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 80px auto; 
+    padding: 40px;
+    /* Gradiente moderno e vivo */
+    background: linear-gradient(135deg, rgba(20, 30, 48, 0.8), rgba(36, 59, 85, 0.8));
+    border-radius: 20px;
+    border: 1px solid rgba(0, 198, 255, 0.2); /* Bordino azzurro sottile */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.ejecutiva-content {
+    flex: 1;
+    text-align: left;
+}
+
+/* Layout per le due foto */
+.ejecutiva-fotos {
+    flex: 1;
+    display: flex;
+    gap: 15px;
+}
+
+.foto-wrapper {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.foto-bella {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease; /* Effetto zoom */
+}
+
+.foto-bella:hover {
+    transform: scale(1.1); /* La foto si ingrandisce quando ci passi sopra */
+}
+
+/* Titolo con colore vivo */
+.titulo-vivo {
+    font-size: 2.8rem;
+    color: #00c6ff; /* Azzurro vivo */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
+}
+
+/* Responsive per mobile */
+@media (max-width: 768px) {
+    .ejecutiva-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .ejecutiva-fotos {
+        width: 100%;
+    }
+    .ejecutiva-content {
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
 
 
 
@@ -599,8 +1041,6 @@ body {
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<title>Seguridad Privada en Colombia | Argus Tactical</title>
-
 
 <body>
     
@@ -640,6 +1080,7 @@ body {
                 </a>
             </div>
         </div>
+
     </div> <section id="about" class="section-about">
         <div class="container">
             
@@ -660,58 +1101,222 @@ body {
                     </p>
                 </div>
 
+
+
+
+
+
+
+<!--BLOCCO EXPERENCE-->
                 <div class="about-card experience-card">
-                    <h3 class="card-title" data-i18n="experience_title">SERVICIOS DE ÈLITE</h3>
-                    <p class="card-text" data-i18n="experience_text">
-                        Ofrecemos soluciones integrales de seguridad adaptadas a las necesidades específicas de cada cliente.
-                    </p>
-                </div>
+
+    <h3 class="card-title" data-i18n="experience_title">
+        SERVICIOS DE ÉLITE
+    </h3>
+
+    <p class="card-text" data-i18n="servicios_elite_text">
+        Ofrecemos soluciones integrales de seguridad adaptadas a las necesidades específicas de cada cliente.
+    </p>
+
+</div>
             </div>
 
         </div>
     </section>
+
+
+
 <!---SERVIZIO PARTE DE SOTTTO-->
-      <section id="servicios" class="section-servicios">
-        <div class="container">
-           <div class="servicios-grid">
+      
+       <section id="servicios" class="section-servicios">
+    <div class="container">
+        
+        <div class="servicios-grid" style="display: none;"></div> 
+
+        <div class="servizio-unico-orizzontale">
             
-            <div class="servicio-card">
-                <div class="icon-circle">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <h2 class="titulo-centrado"
+            data-i18n="title_seguridad_personal">Seguridad Personal</h2>
+
+            <p class="texto-centrado" data-i18n="desc_seguridad_personal">
+                Escoltas armados certificados, convoy de seguridad y protección 
+                VIP 24/7 para máxima seguridad personal.
+            </p>
+
+            <div class="contenitore-video-orizzontale">
+                <div class="video-box">
+                    <video autoplay muted loop>
+                        <source src="video1.mp4" type="video/mp4">
+                    </video>
                 </div>
-                <h3 class="card-title-serv">Seguridad Personal</h3>
-                <p class="card-text-serv">Escoltas armados certificados, convoy de seguridad y protección VIP 24/7 para máxima seguridad personal.</p>
-                <a href="https://wa.me/573207971333" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
+                <div class="video-box">
+                    <video autoplay muted loop>
+                        <source src="video2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-box">
+                    <video autoplay muted loop>
+                        <source src="video3.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
 
-            <div class="servicio-card">
-                <div class="icon-circle">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </div>
-                <h3 class="card-title-serv">Investigación Privada</h3>
-                <p class="card-text-serv">Seguimiento profesional, inteligencia de campo e informes documentados con total confidencialidad.</p>
-                <a href="https://wa.me/573207971333" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
+            <div class="boton-container">
+                <a href="https://wa.me/583202911333" class="btn-solicitar" target="_blank" data-i18n="btn_solicitar">
+                 SOLICITAR SERVICIO
+                </a>
             </div>
 
-            <div class="servicio-card">
-                <div class="icon-circle">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line></svg>
-                </div>
-                <h3 class="card-title-serv">Operaciones Especiales</h3>
-                <p class="card-text-serv">Rutas interdepartamentales, transporte táctico blindado y operaciones di alto riesgo.</p>
-                <a href="https://wa.me/573207971333" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
-            </div>
+        </div> </div> </section>
 
-            <div class="servicio-card">
-                <div class="icon-circle">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
-                </div>
-                <h3 class="card-title-serv">Seguridad Ejecutiva</h3>
-                <p class="card-text-serv">Evaluación de riesgos, planificación estratégica y logística privada integral.</p>
-                <a href="https://wa.me/573207971333" class="solicitar-btn" target="_blank">Solicitar servicio <span class="arrow">→</span></a>
-            </div>
+ 
+   
+    <div class="investigacion-container">
 
-        </div> ```
+
+<div class="investigacion-content">
+    <h2 class="titulo-bello" data-i18n="title_investigacion">Investigación Privada</h2>
+    
+    <p class="texto-investigacion" data-i18n="desc_investigacion">
+        Seguimiento profesional, inteligencia de campo e informes documentados con total confidencialidad.
+    </p>
+    
+    <ul class="checklist-investigacion">
+        <li data-i18n="item_inv_1"><span class="check">✔</span> Investigación de campo</li>
+        <li data-i18n="item_inv_2"><span class="check">✔</span> Informes detallados</li>
+        <li data-i18n="item_inv_3"><span class="check">✔</span> Confidencialidad total</li>
+    </ul>
+
+    <div class="boton-container-left">
+        <a href="https://wa.me/583202911333" class="btn-solicitar" target="_blank" data-i18n="btn_solicitar">
+            SOLICITAR SERVICIO
+        </a>
+    </div>
+</div>
+
+
+    
+
+    <div class="investigacion-video">
+        <div class="video-box-single">
+            <video autoplay muted loop>
+                <source src="video4.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+<div class="operaciones-container">
+    <div class="operaciones-video">
+        <div class="video-box-single">
+            <video autoplay muted loop>
+                <source src="video6.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <div class="operaciones-content">
+        <h2 class="titulo-bello-alt" data-i18n="title_operaciones">Operaciones Especiales</h2>
+        <p class="texto-investigacion" data-i18n="desc_operaciones">
+            Rutas interdepartamentales, transporte táctico blindado y operaciones de alto riesgo.
+        </p>
+        
+        <ul class="checklist-investigacion">
+            <li data-i18n="item_ope_1"><span class="check">✔</span> Transporte blindado</li>
+            <li data-i18n="item_ope_2"><span class="check">✔</span> Rutas seguras</li>
+            <li data-i18n="item_ope_3"><span class="check">✔</span> Operaciones tácticas</li>
+        </ul>
+
+        <div class="boton-container-left">
+            <a href="https://wa.me/583202911333" class="btn-solicitar" target="_blank" rel="noopener noreferrer" data-i18n="btn_solicitar">
+                SOLICITAR SERVICIO
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="ejecutiva-container">
+    <div class="ejecutiva-fotos">
+        <div class="foto-wrapper">
+            <img src="foto7.jpg" alt="Seguridad Ejecutiva 1" class="foto-bella">
+        </div>
+        <div class="foto-wrapper">
+            <img src="foto6.png" alt="Seguridad Ejecutiva 2" class="foto-bella">
+        </div>
+    </div>
+
+    <div class="ejecutiva-content">
+    <h2 class="titulo-vivo" data-i18n="title_ejecutiva">Seguridad Ejecutiva</h2>
+    
+    <p class="texto-investigacion" data-i18n="desc_ejecutiva">
+        Evaluación de riesgos, planificación estratégica y logística privada integral.
+    </p>
+    
+    <ul class="checklist-investigacion">
+        <li data-i18n="item_eje_1"><span class="check">✔</span> Análisis de riesgos</li>
+        <li data-i18n="item_eje_2"><span class="check">✔</span> Planificación</li>
+        <li data-i18n="item_eje_3"><span class="check">✔</span> Logística integral</li>
+    </ul>
+
+    <div class="boton-container-left">
+        <a href="https://wa.me/583202911333" class="btn-solicitar" target="_blank" rel="noopener noreferrer" data-i18n="btn_solicitar">
+            SOLICITAR SERVICIO
+        </a>
+    </div>
+</div>
+</div>
+
+
+
+<!--CONTAINER4-->
+<div class="ejecutiva-container">
+    
+    <div class="ejecutiva-fotos">
+        <div class="foto-wrapper">
+            <img src="foto7.jpg" alt="Seguridad Ejecutiva 1" class="foto-bella">
+        </div>
+        <div class="foto-wrapper">
+            <img src="foto6.png" alt="Seguridad Ejecutiva 2" class="foto-bella">
+        </div>
+    </div>
+
+    <div class="ejecutiva-content">
+    <h2 class="titulo-vivo" data-i18n="title_ejecutiva">Seguridad Ejecutiva</h2>
+    
+    <p class="texto-investigacion" data-i18n="desc_ejecutiva">
+        Evaluación de riesgos, planificación estratégica y logística privada integral.
+    </p>
+    
+    <ul class="checklist-investigacion">
+        <li data-i18n="item_eje_1"><span class="check">✔</span> Análisis de riesgos</li>
+        <li data-i18n="item_eje_2"><span class="check">✔</span> Planificación</li>
+        <li data-i18n="item_eje_3"><span class="check">✔</span> Logística integral</li>
+    </ul>
+
+    <div class="boton-container-left">
+        <a href="https://wa.me/583202911333" class="btn-solicitar" target="_blank" data-i18n="btn_solicitar">
+            SOLICITAR SERVICIO
+        </a>
+    </div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+            
+
+            
+
+        
 
            
 
@@ -762,8 +1367,35 @@ body {
                 vision_title: "Visión",
                 vision_text: "Para el año 2030, ARGUS Tactical será reconocida como una empresa líder en servicios de seguridad privada VIP, destacándose por su excelencia operativa y compromiso permanente.",
                 experience_title: "Servicios de Èlite",
-                servicios_elicte_text: "Ofrecemos soluciones integrales de seguridad adaptadas a las necesidades específicas de cada cliente.",
-                 challenge_title: "Simulador Táctico",
+                servicios_elite_text: "Ofrecemos soluciones integrales de seguridad adaptadas a las necesidades específicas de cada cliente.",
+                
+                // NUOVE TRADUZIONI INGLESE PER I BLOCCHI
+                // CORREZIONE QUI: TESTI IN SPAGNOLO PER IL BLOCCO ES
+                title_seguridad_personal: "Seguridad Personal",
+                desc_seguridad_personal: "Escoltas armados certificados, convoy de seguridad y protección VIP 24/7 para máxima seguridad personal.",
+                title_investigacion: "Investigación Privada",
+                 desc_investigacion: "Seguimiento profesional, inteligencia de campo e informes documentados con total confidencialidad.",
+                 item_inv_1: "Investigación de campo",
+                 item_inv_2: "Informes detallados",
+                 item_inv_3: "Confidencialidad total",
+
+                title_operaciones: "Operaciones Especiales",
+                desc_operaciones: "Rutas interdepartamentales, transporte táctico blindado y operaciones de alto riesgo.",
+                item_ope_1: "Transporte blindado",
+                item_ope_2: "Rutas seguras",
+                item_ope_3: "Operaciones tácticas",
+                btn_solicitar: "SOLICITAR SERVICIO",
+
+                 title_ejecutiva: "Seguridad Ejecutiva",
+            desc_ejecutiva: "Evaluación de riesgos, planificación estratégica y logística privada integral.",
+            item_eje_1: "Análisis de riesgos",
+            item_eje_2: "Planificación",
+            item_eje_3: "Logística integral",
+
+            btn_solicitar: "SOLICITAR SERVICIO",
+                back_home: "← Back Home",
+                
+                challenge_title: "Simulador Táctico",
                 challenge_sub: "Táctico",
                 challenge_label: "Security Awareness Challenge",
                 challenge_desc: "Pon a prueba tus habilidades de observación táctica. Identifica las amenazas de seguridad ocultas en las escenas antes de que se agote el tiempo.",
@@ -784,9 +1416,36 @@ body {
                 mission_text: "To provide comprehensive VIP private security services with high standards of professionalism, confidentiality, and efficiency, oriented towards the protection of people, assets, and facilities.",
                 vision_title: "Vision",
                 vision_text: "By the year 2030, ARGUS Tactical will be recognized as a leading company in VIP private security services, standing out for its operational excellence and permanent commitment.",
+                
                 experience_title: "Servicios  Èlite",
                 servicios_elite_text: "We offer comprehensive security solutions tailored to the specific needs of each client.",
-                challenge_title: "Tactical Simulator",
+                
+                // NUOVE TRADUZIONI INGLESE PER I BLOCCHI
+                // ... altre traduzioni ...
+                title_seguridad_personal: "Personal Security",
+                desc_seguridad_personal: "Certified armed escorts, security convoys, and 24/7 VIP protection for maximum personal safety.",
+                btn_solicitar: "REQUEST SERVICE",
+                title_investigacion: "Private Investigation",
+                desc_investigacion: "Professional surveillance, field intelligence, and documented reports with total confidentiality.",
+                item_inv_1: "Field investigation",
+                item_inv_2: "Detailed reports",
+                item_inv_3: "Total confidentiality",
+
+                title_operaciones: "Special Operations",
+                desc_operaciones: "Inter-departmental routes, armored tactical transport, and high-risk operations.",
+                item_ope_1: "Armored transport",
+                item_ope_2: "Secure routes",
+                item_ope_3: "Tactical operations",
+
+                title_ejecutiva: "Executive Security",
+                desc_ejecutiva: "Risk assessment, strategic planning, and comprehensive private logistics.",
+                item_eje_1: "Risk analysis",
+                item_eje_2: "Planning",
+                item_eje_3: "Comprehensive logistics",
+
+                btn_solicitar: "REQUEST SERVICE",
+                back_home: "← Back Home",
+                
         challenge_sub: "Tactical",
         challenge_label: "Security Awareness Challenge",
         challenge_desc: "Test your tactical observation skills. Identify hidden security threats in the scenes before time runs out.",
@@ -873,7 +1532,9 @@ body {
 </html>
 
 
-            
+           
+          
+           
+
+
    
-             
-        
