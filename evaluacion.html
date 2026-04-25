@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación - Argus Tactical</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        /* TITULO */
+        .title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .title h1 {
+            font-size: 60px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .title h2 {
+            color: #3b82f6;
+            letter-spacing: 3px;
+        }
+
+        /* GRID */
+        .grid {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .left {
+            flex: 1;
+        }
+
+        .right {
+            flex: 1;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+        }
+
+        /* CONTATTI */
+        .contact-item {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+        .icon {
+            margin-right: 10px;
+            color: #25d366;
+        }
+
+        .social {
+            margin-top: 20px;
+        }
+
+        .btn-home {
+            display: inline-block;
+            margin-top: 40px;
+            border: 1px solid #3b82f6;
+            padding: 10px 20px;
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .btn-home:hover {
+            background: #3b82f6;
+            color: black;
+        }
+.contact-box {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-box strong {
+    color: #25d366;
+    font-size: 18px;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- TITULO -->
+    <div class="title">
+        <h1>AGENDA TU EVALUACIÓN</h1>
+        <h2>EVALUACIÓN</h2>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="grid">
+
+        <!-- SINISTRA -->
+        <div class="left" style="padding: 20px;">
+    <h2 style="color: #ffffff; font-size: 36px; border-left: 5px solid #25d366; padding-left: 15px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">
+        Contacto <span style="color: #25d366;">Directo</span>
+    </h2>
+    
+    <p style="color: #cccccc; font-size: 18px; line-height: 1.6; margin-bottom: 40px; font-style: italic;">
+        "Il nostro team d'élite è operativo 24 ore su 24, 7 giorni su 7, per garantire la tua sicurezza con la massima prontezza e discrezione professionale."
+    </p>
+
+    <div class="contact-grid" style="display: grid; gap: 20px;">
+        
+        <div style="background: rgba(37, 211, 102, 0.1); padding: 25px; border-radius: 12px; border: 1px solid rgba(37, 211, 102, 0.3); transition: 0.3s;">
+            <p style="margin: 0; color: #25d366; font-weight: bold; text-transform: uppercase; font-size: 14px;">🟢 WhatsApp Business</p>
+            <strong style="font-size: 24px; color: #ffffff; display: block; margin-top: 5px;">+57 320 797 1333</strong>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <p style="margin: 0; color: #aaaaaa; font-weight: bold; text-transform: uppercase; font-size: 14px;">📞 Linea Operativa</p>
+            <strong style="font-size: 24px; color: #ffffff; display: block; margin-top: 5px;">+57 320 797 1333</strong>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <p style="margin: 0; color: #aaaaaa; font-weight: bold; text-transform: uppercase; font-size: 14px;">📧 Email Ufficiale</p>
+            <strong style="font-size: 20px; color: #25d366; display: block; margin-top: 5px;">info@argustactical.co</strong>
+        </div>
+
+        <div style="background: rgba(37, 211, 102, 0.05); padding: 20px; border-radius: 12px; border-left: 4px solid #25d366;">
+            <p style="margin: 0; color: #ffffff; font-size: 16px;">🌎 <strong>Copertura:</strong> Servizio Nazionale e Internazionale</p>
+        </div>
+
+    </div>
+</div>
+       
+
+
+        <!-- DESTRA -->
+        <div class="right" style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border: 1px solid #25d366;">
+    <h3 style="color: #25d366; font-size: 28px; margin-bottom: 20px;">Solicita tu Evaluación</h3>
+    <p style="margin-bottom: 20px;">Completa el formulario y nuestro equipo se pondrá en contacto para ofrecerte una solución a medida.</p>
+
+    <form id="formEvaluacion">
+    <input type="text" id="nome" placeholder="Nombre Completo" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #444; background:#1a1a1a; color:white;">
+    
+    <label style="display:block; margin-bottom:8px; color:#25d366; font-weight:bold;">Tipo de servicio requerido:</label>
+    <select id="servizio" style="width:100%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #444; background:#1a1a1a; color:white;">
+        <option value="Seguridad Personal">Seguridad Personal</option>
+        <option value="Investigación Privada">Investigación Privada</option>
+        <option value="Operaciones Especiales">Operaciones Especiales</option>
+        <option value="Seguridad Ejecutiva">Seguridad Ejecutiva</option>
+        <option value="Renta de Vehículos">Renta de Vehículos</option>
+    </select>
+
+    <input type="text" id="client_whatsapp" placeholder="Tu Número de WhatsApp" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #444; background:#1a1a1a; color:white;">
+    
+    <input type="email" id="email" placeholder="Tu Email" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #444; background:#1a1a1a; color:white;">
+    
+    <textarea id="messaggio" placeholder="Mensaje adicional (Detalles de la solicitud)..." style="width:100%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #444; background:#1a1a1a; color:white; height:100px;"></textarea>
+
+    <button type="button" onclick="mandarWhatsApp()" style="width:100%; padding:15px; background:#25d366; color:black; font-weight:bold; border:none; border-radius:8px; cursor:pointer; font-size:18px; text-transform:uppercase; transition: 0.3s; box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.4);">
+        Enviar Solicitud
+    </button>
+</form>
+
+
+</div>
+
+<a href="index.html" class="btn-solicitar" data-i18n="back_home">
+    ← Volver al inicio
+</a>
+
+<script>
+function mandarWhatsApp() {
+    // Prendiamo i valori dai campi
+    const nome = document.getElementById('nome').value;
+    const servizio = document.getElementById('servizio').value;
+    const whatsappCliente = document.getElementById('client_whatsapp').value;
+    const email = document.getElementById('email').value;
+    const messaggio = document.getElementById('messaggio').value;
+
+    // Controllo se i campi obbligatori sono pieni
+    if(nome === "" || whatsappCliente === "" || email === "") {
+        alert("Por favor, completa los campos obligatorios.");
+        return;
+    }
+
+    // Il tuo numero di WhatsApp
+    const mioNumero = "573207971333"; 
+
+    // Costruiamo il messaggio elegante
+    const testo = "🚨 *NUEVA SOLICITUD DE EVALUACIÓN* 🚨%0A%0A" +
+                  "*Nombre:* " + nome + "%0A" +
+                  "*Servicio:* " + servizio + "%0A" +
+                  "*WhatsApp:* " + whatsappCliente + "%0A" +
+                  "*Email:* " + email + "%0A" +
+                  "*Mensaje:* " + messaggio;
+
+    // URL di WhatsApp
+    const url = "https://wa.me/" + mioNumero + "?text=" + testo;
+    
+    // Apriamo il link
+    window.open(url, '_blank');
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>
