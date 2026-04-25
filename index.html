@@ -228,8 +228,10 @@
   font-size: 16px;
   color: white;
   line-height: 1.6;}
-   /*TESTO TOP*/
+
+/*TESTO TOP*/
 .about-text {
+    
   background: rgba(0,0,0,0.5);
   padding: 15px;
   border-radius: 10px;
@@ -242,8 +244,9 @@
   background: rgba(0,0,0,0.6);
   border-radius: 15px;
   padding: 20px;
-  color: white;   }
-    @media (max-width: 768px) {
+  color: white;
+}
+@media (max-width: 768px) {
   .about-grid {
     flex-direction: column;
   }
@@ -251,7 +254,7 @@
 
 
 
-        
+
         /* --- SEZIONE ABOUT (MISSION/VISION) --- */
         .section-about {
     /* ... (resto del codice di sopra) ... */
@@ -1089,7 +1092,8 @@ experience-card {
                 <li><a href="#servicios" data-i18n="nav_servicios">Servicios</a></li>
                 <li><a href="#about" data-i18n="nav_nosotros">Nosotros</a></li>
                 <li><a href="desafio.html" data-i18n="nav_desafio">Desafío</a></li>
-                <li><a href="#contacto" data-i18n="nav_contacto">Contacto</a></li>
+
+                <li><a href="contacto.html" data-i18n="nav_contacto">Contacto</a></li>
 
                 
                 <li class="lang-selector">
@@ -1103,9 +1107,12 @@ experience-card {
         <div class="content" id="inicio">
             <h1 data-i18n="hero_title">Argus Tactical</h1>
             <p data-i18n="hero_subtitle">Protección · Estrategia · Precisión</p>
+
+            
             
             <div class="buttons">
-                <a href="contacto" class="btn" data-i18n="btn_evaluacion">Solicita Evaluación.html</a>
+                <a href="evaluacion.html" class="btn" data-i18n="btn_evaluacion">Solicita Evaluación.html</a>
+                
                 <a href="https://wa.me/573207971333" class="btn btn-whatsapp" target="_blank" data-i18n="btn_whatsapp">
                     WhatsApp Directo
                 </a>
@@ -1114,12 +1121,14 @@ experience-card {
 
     </div> <section id="about" class="section-about">
         <div class="container">
-            
+            <!--QUIENES SOMOS-->
             <h2 class="section-title" data-i18n="about_title">¿Quiénes Somos?</h2>
-            <p class="about-text" data-i18n="about_text">
+
+<p class="about-text" data-i18n="about_text">
   Argus Tactical es una empresa de seguridad privada de alto nivel, especializada en la protección de personas, bienes y operaciones estratégicas. 
   Contamos con personal altamente capacitado y ofrecemos soluciones adaptadas a cada cliente, garantizando seguridad, discreción y profesionalismo.
 </p>
+
 
             <div class="about-grid">
                 <div class="about-card">
@@ -1303,41 +1312,9 @@ experience-card {
 
 
 
-<!--CONTAINER4-->
-<div class="ejecutiva-container">
-    
-    <div class="ejecutiva-fotos">
-        <div class="foto-wrapper">
-            <img src="foto7.jpg" alt="Seguridad Ejecutiva 1" class="foto-bella">
-        </div>
-        <div class="foto-wrapper">
-            <img src="foto6.png" alt="Seguridad Ejecutiva 2" class="foto-bella">
-        </div>
-    </div>
 
-    <div class="ejecutiva-content">
-    <h2 class="titulo-vivo" data-i18n="title_ejecutiva">Seguridad Ejecutiva</h2>
-    
-    <p class="texto-investigacion" data-i18n="desc_ejecutiva">
-        Evaluación de riesgos, planificación estratégica y logística privada integral.
-    </p>
-    
-    <ul class="checklist-investigacion">
-        <li data-i18n="item_eje_1"><span class="check">✔</span> Análisis de riesgos</li>
-        <li data-i18n="item_eje_2"><span class="check">✔</span> Planificación</li>
-        <li data-i18n="item_eje_3"><span class="check">✔</span> Logística integral</li>
-    </ul>
-
-    <div class="boton-container-left">
-        <a href="https://wa.me/583202911333" class="btn-solicitar" target="_blank" data-i18n="btn_solicitar">
-            SOLICITAR SERVICIO
-        </a>
-    </div>
-</div>
-</div>
-    
-    <!---CONTAINER5-->
-    <div class="alquiler-container" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 80px 0;">
+<!---CONTAINER5-->
+<div class="alquiler-container" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 80px 0;">
     
     <div class="operaciones-container"> <div class="operaciones-video">
             <div class="video-box-single">
@@ -1368,6 +1345,7 @@ experience-card {
 
     </div>
 </div>
+
 
 
 
@@ -1432,7 +1410,6 @@ experience-card {
 
                 mission_title: "Misión",
                 mission_text: "Brindar servicios integrales de seguridad privada VIP con altos estándares de profesionalismo, confidencialidad y eficiencia, orientados a la protección de personas, bienes e instalaciones.",
-                
                 vision_title: "Visión",
                 vision_text: "Para el año 2030, ARGUS Tactical será reconocida como una empresa líder en servicios de seguridad privada VIP, destacándose por su excelencia operativa y compromiso permanente.",
                 experience_title: "Servicios de Èlite",
@@ -1470,11 +1447,19 @@ experience-card {
                 challenge_desc: "Pon a prueba tus habilidades de observación táctica. Identifica las amenazas de seguridad ocultas en las escenas antes de que se agote el tiempo.",
                  back_home: "← Volver al inicio",
                 title_alquiler: "Alquila tu Vehículo",
-desc_alquiler: "Contamos con una flota exclusiva de vehículos blindados y de alta gama. Soluciones a medida para traslados seguros, elegantes y adaptados a cualquier terreno.",
-item_alq_1: "Vehículos Blindados (Nivel 3-5)",
-item_alq_2: "Camionetas 4x4 de Lujo",
-item_alq_3: "Disponibilidad Inmediata",
+                desc_alquiler: "Contamos con una flota exclusiva de vehículos blindados y de alta gama. Soluciones a medida para traslados seguros, elegantes y adaptados a cualquier terreno.",
+                item_alq_1: "Vehículos Blindados (Nivel 3-5)",
+                item_alq_2: "Camionetas 4x4 de Lujo",
+                item_alq_3: "Disponibilidad Inmediata",
+                btn_evaluacion: "SOLICITA TU EVALUACIÓN",
+                back_home: "← Volver al inicio",
+
+
+
+
+
             },
+
             en: {
                 nav_inicio: "Home",
                 nav_servicios: "Services",
@@ -1525,12 +1510,15 @@ item_alq_3: "Disponibilidad Inmediata",
         challenge_label: "Security Awareness Challenge",
         challenge_desc: "Test your tactical observation skills. Identify hidden security threats in the scenes before time runs out.",
         back_home: "← Back Home",
-                title_alquiler: "Rent Your Vehicle",
-desc_alquiler: "We have an exclusive fleet of armored and high-end vehicles. Tailor-made solutions for safe, elegant transfers adapted to any terrain.",
-item_alq_1: "Armored Vehicles (Level 3-5)",
-item_alq_2: "Luxury 4x4 SUVs",
-item_alq_3: "Immediate Availability",
-                
+        title_alquiler: "Rent Your Vehicle",
+        desc_alquiler: "We have an exclusive fleet of armored and high-end vehicles. Tailor-made solutions for safe, elegant transfers adapted to any terrain.",
+        item_alq_1: "Armored Vehicles (Level 3-5)",
+        item_alq_2: "Luxury 4x4 SUVs",
+        item_alq_3: "Immediate Availability",
+
+             btn_evaluacion: "REQUEST YOUR EVALUATION",
+            back_home: "← Back Home",
+   
                 
             }
              
@@ -1608,13 +1596,39 @@ item_alq_3: "Immediate Availability",
         
 
     </script>
+
+<footer class="site-footer" style="background: #0a0a0a; border-top: 1px solid #25d366; padding: 40px 20px; color: white; margin-top: 50px;">
+    <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+        
+        <div class="footer-left" style="display: flex; align-items: center; gap: 15px;">
+            <img src="logo.jpg" alt="Argus Tactical Logo" style="width: 50px; height: auto;">
+            <span style="font-size: 24px; font-weight: bold; letter-spacing: 1px; color: #ffffff; text-transform: uppercase;">
+                Argus <span style="color: #25d366;">Tactical</span>
+            </span>
+        </div>
+
+        <div class="footer-right" style="text-align: right;">
+            <p style="margin: 0; font-size: 14px; color: #cccccc;">
+                © 2025 Argus Tactical - Cali, Colombia. Todos los derechos reservados.
+            </p>
+            <p style="margin: 5px 0; font-size: 14px; color: #25d366; font-weight: bold;">
+                Protección Ejecutiva | Transporte Blindado | Inteligencia Privada
+            </p>
+            
+            <div style="margin-top: 10px;">
+                <a href="https://www.instagram.com/argustactical" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; justify-content: flex-end; gap: 8px; transition: 0.3s;">
+                    <span style="font-size: 14px;">@argustactical</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" style="width: 20px; height: 20px; filter: invert(1);">
+                </a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+
+
 </body>
 </html>
 
-
-           
-          
-           
-
-
-   
