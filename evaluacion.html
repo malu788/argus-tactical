@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicios de seguridad privada en Colombia. Protección VIP, escoltas armados y análisis de riesgos en Cali, Medellín y Bogotá.">
+
+<meta name="keywords" content="seguridad privada Colombia, escoltas VIP, protección ejecutiva, seguridad Cali, seguridad Medellín, seguridad Bogotá">
+
+<meta name="author" content="Argus Tactical">
+
+<meta name="robots" content="index, follow">
+    <title>Evaluacion de Segiridad | Argus Tactical</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <section class="hero-eval">
+
+    <h1 data-i18n="eval_title">AGENDA TU EVALUACIÓN</h1>
+
+    <p data-i18n="eval_subtitle">
+        Análisis estratégico personalizado
+    </p>
+
+</section>
+
+<!--CONTAINET-->
+<section class="contact-section">
+
+    <!-- SINISTRA -->
+    <div class="contact-left">
+
+        <h2 data-i18n="contact_title_left">CONTACTO DIRECTO</h2>
+
+        <p class="desc" data-i18n="contact_desc">
+            Nuestro equipo está disponible 24/7 para atender tus requerimientos
+            con máxima discreción y profesionalismo.
+        </p>
+
+        <!-- WHATSAPP -->
+        <div class="contact-box">
+    <h3>WHATSAPP BUSINESS</h3>
+
+    <a href="https://wa.me/573207971333" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+        <!-- TELEFONO -->
+        <div class="contact-box">
+            <h3>LÍNEA OPERATIVA</h3>
+            <p>+57 320 797 1333</p>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="contact-box">
+            <h3>EMAIL OFICIAL</h3>
+            <p>info@argustactical.co</p>
+        </div>
+        <!--ALTRO CONTAINER-->
+<div class="coverage">
+    <p data-i18n="coverage">
+    <i class="fas fa-globe"></i>
+    Cobertura nacional e internacional
+    </p>
+    
+</div>
+
+
+
+
+    </div>
+
+    <!-- DESTRA -->
+    <div class="contact-right">
+
+        <h2 data-i18n="contact_title_right">Solicita tu Evaluación</h2>
+
+        <p data-i18n="contact_desc">
+        Completa el formulario y nuestro equipo te contactará.
+    </p>
+
+        <form id="contactForm"> <!--ATTIVARW WHAT-->
+
+
+
+
+<input type="text" name="nombre" placeholder="Nombre completo" required>
+
+<select name="servicio">
+    <option>Seguridad Personal</option>
+    <option>Investigación Privada</option>
+    <option>Protección VIP</option>
+   <option> Planificación de Rutas</option>
+   <option>Proteción Tàctica</option>
+   
+
+</select>
+
+<input type="text" name="whatsapp" placeholder="Tu número de WhatsApp">
+
+<input type="email" name="email" placeholder="Tu email">
+
+<textarea name="mensaje" rows="4" placeholder="Mensaje adicional..."></textarea>
+            
+
+            <button type="submit" class="btn" data-i18n="btn_send">
+ENVIAR SOLICITUD
+</button>
+
+        </form>
+        <!--BUTTOM RITORNA-->
+<div class="back-home">
+    <a href="index.html" class="btn-back" data-i18n="back-home">
+        ← Volver al Inicio
+    </a>
+</div>
+
+
+
+    </div>
+
+</section>
+<!--ICONO WHATSAPP-->
+
+
+
+
+
+
+
+<!-- SCRIPT -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const nombre = document.querySelector('[name="nombre"]').value;
+  const servicio = document.querySelector('[name="servicio"]').value;
+  const whatsapp = document.querySelector('[name="whatsapp"]').value;
+  const email = document.querySelector('[name="email"]').value;
+  const mensaje = document.querySelector('[name="mensaje"]').value;
+
+  const texto = 
+`Hola, quiero solicitar un servicio:
+Nombre: ${nombre}
+Servicio: ${servicio}
+WhatsApp: ${whatsapp}
+Email: ${email}
+Mensaje: ${mensaje}`;
+
+  const numero = "573207971333";
+
+  const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(texto);
+
+  window.open(url, "_blank");
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

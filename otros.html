@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios Adicionales | Argus Tactical</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<!--STYLE PERSONALIZZATO-->
+
+<style>
+
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("otros.png") no-repeat center center/cover;
+
+    min-height: 100vh;
+}
+    .titulo-servicios {
+    text-align: center;
+    padding: 60px 20px 20px;
+
+    background: rgba(0, 0, 0, 0.4); /* trasparente */
+    backdrop-filter: blur(10px); /* effetto vetro */
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 10px;
+}
+
+.titulo-servicios h1 {
+    font-size: 60px;
+    color: white;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* effetto luce elegante */
+.titulo-servicios h1 {
+    background: linear-gradient(90deg, #ffffff, #3fffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.titulo-servicios p {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+/* HEADER BELLO */
+.hero-servicios {
+    height: 400px;
+    background: url('fondo-servicios.jpg') center/cover no-repeat;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+/* overlay oscuro elegante */
+.hero-servicios::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(1, 34, 21, 0.7);
+}
+
+.logo-hero {
+    width: 120px;
+    z-index: 2;
+    margin-bottom: 10px;
+}
+
+
+
+.hero-servicios p {
+    z-index: 2;
+    color: #ccc;
+}
+
+/* BOTON HOME */
+.btn-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    border: 1px solid #3b82f6;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.btn-home:hover {
+    background: #3b82f6;
+}
+
+/* CONTENEDOR */
+.servicios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px;
+
+    background: rgba(0, 0, 0, 0.4); /* trasparente */
+    backdrop-filter: blur(12px); /* effetto vetro */
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 15px;
+}
+/* CARDS */
+.servicio-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(200, 169, 106, 0.4);
+    transition: 0.3s;
+}
+
+
+
+.servicio-card:hover {
+    transform: translateY(-10px);
+}
+
+/* IMAGEN */
+.servicio-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* TEXTOS */
+.servicio-card h2 {
+    color: #e9eef5;
+    padding: 15px;
+}
+
+.servicio-card p {
+    color: #e7e7f1;
+    padding: 0 15px 20px;
+}
+
+/* SEZIONE CONTACTO */
+.cta-contacto {
+    background: rgba(0, 0, 0, 0.5); /* trasparente */
+    backdrop-filter: blur(10px); /* effetto vetro */
+    -webkit-backdrop-filter: blur(10px);
+
+    text-align: center;
+    padding: 60px 20px;
+
+    border-radius: 15px;
+}
+
+/* TITOLO */
+.cta-contacto h2 {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* TESTO */
+.cta-contacto p {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* BOTON WHATSAPP */
+.btn-whatsapp {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.btn-whatsapp:hover {
+    background: #1ebe5d;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(37,211,102,0.6);
+}
+/* BOTTONE HOME */
+.btn-home-bottom {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+
+    background: transparent;
+    border: 2px solid #656566;
+    color: #c6c7c9;
+
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+/* HOVER */
+.btn-home-bottom:hover {
+    background: #eaebec;
+    color: white;
+    transform: scale(1.05);
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+    <a href="index.html" class="btn-home-bottom">
+    ← Volver al inicio
+</a>
+
+<section class="titulo-servicios">
+    <h1 data-i18n="serv_title">Servicios Adicionales</h1>
+    <p data-i18n="serv_subtitle"> Soluciones complementarias para la seguridad y operación integral</p>
+</section>
+
+
+<!-- SERVICIOS -->
+<section class="servicios-container">
+
+    <!-- SERVICIO 1 -->
+    <div class="servicio-card">
+        <img src="conse.png">
+
+        <h2 data-i18="serv1_title">Conserjería y Portería</h2>
+        <p data-i18n="serv1_text">
+        Control de acceso, recepción de visitantes, supervisión de ingresos 
+        y apoyo operativo en instalaciones residenciales, empresariales e institucionales.
+        </p>
+    </div>
+
+    <!-- SERVICIO 2 -->
+    <div class="servicio-card">
+        <img src="consej.png">
+        
+        <h2 data-i18n="serv2_title">Limpieza y Mantenimiento Locativo</h2>
+        <p data-i18n="serv2_text">
+        Actividades de limpieza general en áreas comunes, oficinas, 
+        instalaciones industriales y comerciales, bajo protocolos de orden y salubridad.
+        </p>
+    </div>
+
+    <!-- SERVICIO 3 -->
+    <div class="servicio-card">
+        <img src="jardi.png">
+
+        <h2 data-i18n="serv3_title">Jardinería y Zonas Verdes</h2>
+
+        <p data-i18n="serv3_text">
+        Conservación, embellecimiento y mantenimiento preventivo 
+        de jardines y espacios exteriores.
+        </p>
+    </div>
+
+</section>
+<section class="cta-contacto">
+
+    <h2 data-i18n="cta_title">¿Necesitas más información?</h2>
+
+    <p data-i18n="cta_text">Contáctanos ahora y recibe asesoría personalizada en seguridad y servicios adicionales.</p>
+
+    <a href="https://wa.me/573001234567" target="_blank" class="btn-whatsapp" data-i18n="cta_whatsapp">
+ 💬 Contactar por WhatsApp
+    </a>
+
+</section>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+
+
+
