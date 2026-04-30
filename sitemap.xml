@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://TU-SITO/</loc>
-</url>
+  <url>
+    <loc>https://malu788.github.io/argustactical/</loc>
+  </url>
 
-<url>
-<loc>https://TU-SITO/servicios.html</loc>
-</url>
+  <url>
+    <loc>https://malu788.github.io/argustactical/index.html</loc>
+  </url>
 
-<url>
-<loc>https://TU-SITO/evaluacion.html</loc>
-</url>
+  <url>
+    <loc>https://malu788.github.io/argustactical/servicios.html</loc>
+  </url>
 
-<url>
-<loc>https://TU-SITO/experiencia.html</loc>
-</url>
+  <url>
+    <loc>https://malu788.github.io/argustactical/contacto.html</loc>
+  </url>
+
+  <url>
+    <loc>https://malu788.github.io/argustactical/experiencia.html</loc>
+  </url>
+
+  <url>
+    <loc>https://malu788.github.io/argustactical/evaluacion.html</loc>
+  </url>
 
 </urlset>
