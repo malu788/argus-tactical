@@ -127,7 +127,7 @@ serv_title: "Servicios Adicionales",
     cta_btn: "💬 Contactar por WhatsApp",
      clients_text: "Argus Tactical ha participado en múltiples operaciones de seguridad privada, brindando protección y acompañamiento estratégico a clientes en diferentes sectores, siempre bajo principios de discreción, profesionalismo y control de riesgos.",
 
-aliado1_desc: "Italian Security está avalada por la Superintendencia de Vigilancia y Seguridad Privada, lo cual funciona como respaldo legal y garantía institucional de nuestros servicios.",
+aliado1_desc: "Seguridadk77 está avalada por la Superintendencia de Vigilancia y Seguridad Privada, lo cual funciona como respaldo legal y garantía institucional de nuestros servicios.",
 cta_whatsapp: "💬 Contactar por WhatsApp",
 
 
@@ -263,7 +263,7 @@ eval_title: "SCHEDULE YOUR EVALUATION",
     cta_title: "Need more information?",
     cta_text: "Contact us now and receive personalized advice on security and additional services.",
     cta_btn: "💬 Contact via WhatsApp",clients_text: "Argus Tactical has participated in multiple private security operations, providing protection and strategic support to clients across different sectors, always under principles of discretion, professionalism, and risk control.",
- aliado1_desc: "Italian Security is authorized by the Superintendence of Surveillance and Private Security, which serves as legal backing and institutional guarantee of our services.",
+ aliado1_desc: "Seguridadk77 is authorized by the Superintendence of Surveillance and Private Security, which serves as legal backing and institutional guarantee of our services.",
     cta_whatsapp: "💬 Contact via WhatsApp",
 
 
@@ -407,7 +407,7 @@ cobertura_title: "Copertura Nazionale",
     cta_text: "Contattaci ora e ricevi una consulenza personalizzata su sicurezza e servizi aggiuntivi.",
     cta_btn: "💬 Contatta su WhatsApp",
 clients_text: "Argus Tactical ha partecipato a molteplici operazioni di sicurezza privata, fornendo protezione e supporto strategico a clienti in diversi settori, sempre nel rispetto di discrezione, professionalità e controllo dei rischi.",
- aliado1_desc: "Italian Security è autorizzata dalla Sovrintendenza alla Vigilanza e Sicurezza Privata, il che rappresenta una garanzia legale e istituzionale dei nostri servizi.",
+ aliado1_desc: "Seguridadk77 è autorizzata dalla Sovrintendenza alla Vigilanza e Sicurezza Privata, il che rappresenta una garanzia legale e istituzionale dei nostri servizi.",
 
 cta_whatsapp: "💬 Contatta su WhatsApp",
 
